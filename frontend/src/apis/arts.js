@@ -2,19 +2,19 @@ import axios from "axios";
 
 var arts = {
     async get(id) {
-        const result = await axios.get('http://43.206.118.182:3001/arts/'+id);
+        const result = await axios.get('http://18.183.162.177:3001/arts/'+id);
         return result;
     },
     async getAll() {
-        const result = await axios.get('http://43.206.118.182:3001/arts/all');
+        const result = await axios.get('http://18.183.162.177:3001/arts/all');
         return result;
     },
     async getMyArts() {
-        const result = await axios.get('http://43.206.118.182:3001/arts/my-arts', {withCredentials: true, headers: {"Content-type": "application/json",} });
+        const result = await axios.get('http://18.183.162.177:3001/arts/my-arts', {withCredentials: true, headers: {"Content-type": "application/json",} });
         return result;
     },
     async getArtsOfUser(idUser) {
-        const result = await axios.post('http://43.206.118.182:3001/arts/arts-user', {idUser: idUser});
+        const result = await axios.post('http://18.183.162.177:3001/arts/arts-user', {idUser: idUser});
         return result;
     },
     async arrayBufferToBase64( buffer ) {
@@ -27,19 +27,19 @@ var arts = {
         formData.append("upload", image);
         formData.append("name", name);
         formData.append("desc", desc);
-        const result = await axios.post('http://43.206.118.182:3001/arts/create', formData, {withCredentials: true, headers: {"Content-type": "multipart/form-data",} });
+        const result = await axios.post('http://18.183.162.177:3001/arts/create', formData, {withCredentials: true, headers: {"Content-type": "multipart/form-data",} });
         return result;
     },
     async oneMoreViewOnArt(id) {
-        const result = await axios.post('http://43.206.118.182:3001/arts/plus-view', {id: id});
+        const result = await axios.post('http://18.183.162.177:3001/arts/plus-view', {id: id});
         return result;
     },
     async deleteArt(id) {
-        const result = await axios.delete('http://43.206.118.182:3001/arts/delete/'+id, {withCredentials: true, headers: {"Content-type": "application/json",} });
+        const result = await axios.delete('http://18.183.162.177:3001/arts/delete/'+id, {withCredentials: true, headers: {"Content-type": "application/json",} });
         return result;
     },
     async updateArt(dataUpdate) {
-        const result = await axios.put('http://43.206.118.182:3001/arts/update', dataUpdate, {withCredentials: true, headers: {"Content-type": "application/json",} });
+        const result = await axios.put('http://18.183.162.177:3001/arts/update', dataUpdate, {withCredentials: true, headers: {"Content-type": "application/json",} });
         return result;
     }
 }

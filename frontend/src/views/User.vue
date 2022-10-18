@@ -35,7 +35,7 @@ export default {
             if (user.data.data.imageProfil == "" || user.data.data.imageProfil == undefined) {
                 this.profilPic = "/src/assets/Images/profile/noProfilePic.webp"
             } else {
-                this.profilPic= 'http://43.206.118.182:3001/profileImage/' + user.data.data.imageProfil;
+                this.profilPic= 'http://18.183.162.177:3001/profileImage/' + user.data.data.imageProfil;
             }
             this.showArts(user.data.data._id);
         }
@@ -105,7 +105,7 @@ export default {
             </div>
             <div class="rows">
                 <div v-for="art in this.artsOfUser" class="pics" :key="art._id">
-                    <img class="imgArts" :src='"http://43.206.118.182:3001/artsImage/" + art.image'>
+                    <img class="imgArts" :src='"http://18.183.162.177:3001/artsImage/" + art.image'>
                     <div class="position">
                         <div class="names">{{art.name}}</div>
                         <div class="views">

@@ -14,7 +14,7 @@ export default {
     },
     methods:{
         submitEmail() {
-            this.$http.post('http://43.206.118.182:3001/auth/sendMail', {code: this.code, email: this.email, newPass: this.newPass}, {withCredentials: true, headers: {"Content-type": "application/json",}})
+            this.$http.post('http://18.183.162.177:3001/auth/sendMail', {code: this.code, email: this.email, newPass: this.newPass}, {withCredentials: true, headers: {"Content-type": "application/json",}})
              .then((res) => {
                 if (res.data.success) {
                     this.error = "";
@@ -37,7 +37,7 @@ export default {
             }
         },
         submitPass() {
-            this.$http.post('http://43.206.118.182:3001/auth/newPassword', {code: this.code, email: this.email, newPass: this.newPass}, {withCredentials: true, headers: {"Content-type": "application/json",}})
+            this.$http.post('http://18.183.162.177:3001/auth/newPassword', {code: this.code, email: this.email, newPass: this.newPass}, {withCredentials: true, headers: {"Content-type": "application/json",}})
              .then((res) => {
                  console.log(res);
                 if (res.data.success) {

@@ -20,14 +20,14 @@ export default {
             this.arts = myArts.data.data;
             let cpt = 0;
             for (let art of this.arts) {
-                art.image = "http://43.206.118.182:3001/artsImage/" + art.image;
+                art.image = "http://18.183.162.177:3001/artsImage/" + art.image;
                 art.likes = await likesApi.likesArt(art._id);
                 art.cpt = cpt;
                 let userImage = await userApi.getUser(art.user);
                 if (userImage.data.data.imageProfil == "" || userImage.data.data.imageProfil == undefined) {
                     art.imageProfilUser = "/src/assets/Images/profile/noProfilePic.webp"
                 } else {
-                    art.imageProfilUser= 'http://43.206.118.182:3001/profileImage/' + userImage.data.data.imageProfil
+                    art.imageProfilUser= 'http://18.183.162.177:3001/profileImage/' + userImage.data.data.imageProfil
                 }
                 art.username = userImage.data.data.username;
                 

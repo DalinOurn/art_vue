@@ -30,7 +30,7 @@ export default {
         const artResp = await artsApi.get(this.$route.params.id);
         if (artResp?.data?.success) {
             this.art= artResp.data.data;
-            this.art.image = 'http://43.206.118.182:3001/artsImage/' + this.art.image;
+            this.art.image = 'http://18.183.162.177:3001/artsImage/' + this.art.image;
             this.nbViews = this.art.views;
             this.nbLikes = await likesApi.likesArt(this.art._id);
             const userResp = await userApi.getUser(this.art.user);
@@ -38,7 +38,7 @@ export default {
             if (this.user.imageProfil == "" ||this.user.imageProfil == undefined) {
                 this.user.imageProfil = "/src/assets/Images/profile/noProfilePic.webp"
             } else {
-                this.user.imageProfil = 'http://43.206.118.182:3001/profileImage/' + this.user.imageProfil;
+                this.user.imageProfil = 'http://18.183.162.177:3001/profileImage/' + this.user.imageProfil;
             }
             this.nbFollow = await followApi.howManyFollower(this.user._id);
         }

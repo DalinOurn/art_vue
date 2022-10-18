@@ -3,7 +3,7 @@ let RedisStore = require("connect-redis")(session)
 const { createClient } = require("redis")
 
 module.exports = async (app) => {
-  let redisClient = createClient({url: 'redis://43.206.118.182:6379', legacyMode: true})
+  let redisClient = createClient({url: 'redis://18.183.162.177:6379', legacyMode: true})
   redisClient.connect().then(()=>{
     console.log("Redis connected~");
   }).catch(console.error)

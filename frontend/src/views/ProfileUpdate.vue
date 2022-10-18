@@ -36,7 +36,7 @@ export default {
             if (me.data.data.imageProfil == "" || me.data.data.imageProfil == undefined) {
                 this.profilPic = "/src/assets/Images/profile/noProfilePic.webp"
             } else {
-                this.profilPic= 'http://43.206.118.182:3001/profileImage/' + me.data.data.imageProfil;
+                this.profilPic= 'http://18.183.162.177:3001/profileImage/' + me.data.data.imageProfil;
             }
         } 
     },
@@ -64,7 +64,7 @@ export default {
                 } else {
                     this.error = '';
                     const me = await authApi.getMe();
-                    this.profilPic= 'http://43.206.118.182:3001/profileImage/' + me.data.data.imageProfil;
+                    this.profilPic= 'http://18.183.162.177:3001/profileImage/' + me.data.data.imageProfil;
                     this.successMsgImage = 'Profile picture successfully updated';
                     document.getElementById('successMsgImage').style.opacity = 1
                     setTimeout(this.successMsgDisapear, 5000);

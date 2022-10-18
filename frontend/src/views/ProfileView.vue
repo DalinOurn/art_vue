@@ -36,7 +36,7 @@ export default {
             if (me.data.data.imageProfil == "" || me.data.data.imageProfil == undefined) {
                 this.profilPic = "/src/assets/Images/profile/noProfilePic.webp"
             } else {
-                this.profilPic= 'http://43.206.118.182:3001/profileImage/' + me.data.data.imageProfil;
+                this.profilPic= 'http://18.183.162.177:3001/profileImage/' + me.data.data.imageProfil;
             }
             await this.showArts();  
         }
@@ -70,7 +70,7 @@ export default {
             const myArts = await artsApi.getMyArts();
             this.artsOfUser = myArts.data.data;
             for (let art of this.artsOfUser) {
-                art.image = "http://43.206.118.182:3001/artsImage/" + art.image;
+                art.image = "http://18.183.162.177:3001/artsImage/" + art.image;
                 art.likes = await likesApi.likesArt(art._id);
             }
             console.log(this.artsOfUser)

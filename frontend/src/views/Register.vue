@@ -15,7 +15,7 @@ export default {
     },
     methods:{
         submitRegister(){
-        this.$http.post('http://43.206.118.182:3001/auth/register', this.dataRegister, {withCredentials: true, headers: {"Content-type": "application/json",}})
+        this.$http.post('http://18.183.162.177:3001/auth/register', this.dataRegister, {withCredentials: true, headers: {"Content-type": "application/json",}})
              .then((res) => {
                 if (res.data.success) {
                     this.$router.push({name: "login"});

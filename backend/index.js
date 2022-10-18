@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(cors({
-  origin: "http://18.179.43.132:80",
+  origin: "http://13.114.59.242:80",
   credentials: true
 }))
 
@@ -30,4 +30,4 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(process.env.PORT || 3001, () => console.log('App available on http://43.206.118.182/3001'));
+app.listen(process.env.PORT || 3001, () => console.log('App available on http://13.114.59.242/3001'));
